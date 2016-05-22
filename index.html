@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://v4-alpha.getbootstrap.com/examples/offcanvas/# -->
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=
+    "viewport">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>webonise</title><!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/customize.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <script src="http://code.jquery.com/jquery-latest.js">
+    </script>
+    <link href=
+    "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel=
+    "stylesheet">
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">
+    </script>
+    <script src=
+    "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script><!--============select====-->
+
+    <script>
+    $( "select" )
+    .change(function() {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( "#debug" ).text( str );
+    })
+    .trigger( "change" );
+    </script><!--==============sidebar-->
+
+    <script>
+    function htmlbodyHeightUpdate(){
+        var height3 = $( window ).height()
+        var height1 = $('.nav').height()+50
+        height2 = $('.main').height()
+        if(height2 > height3){
+            $('html').height(Math.max(height1,height3,height2)+10);
+            $('body').height(Math.max(height1,height3,height2)+10);
+        }
+        else
+        {
+            $('html').height(Math.max(height1,height3,height2));
+            $('body').height(Math.max(height1,height3,height2));
+        }
+        
+    }
+    $(document).ready(function () {
+        htmlbodyHeightUpdate()
+        $( window ).resize(function() {
+            htmlbodyHeightUpdate()
+        });
+        $( window ).scroll(function() {
+            height2 = $('.main').height()
+            htmlbodyHeightUpdate()
+        });
+    });
+    </script>
+</head>
+<body>
+    <!--======================header============-->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <!--==========1 col====-->
+                <div class="col-md-3 col-xs-6" id="logo">
+                    <a href="#"><img alt="logo" height="auto" src=
+                    "images/logo.png" width="auto">
+                    <h2>HomeShopApp</h2></a>
+                </div><!--==========2 col====-->
+                <div class="col-md-6 col-xs-12">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <input class="form-control" placeholder=
+                            "Search for your favourite product or brand" style=
+                            "min-width:305px;background-image: url('images/s.png');background-repeat: no-repeat; background-position: left; text-indent: 10px;"
+                            type="text">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="aioConceptName"
+                            style="background:#f2f2f2;">
+                                <option selected="true" style="display:none;">
+                                    All Categories
+                                </option>
+                                <option>
+                                    Category 1
+                                </option>
+                                <option>
+                                    Category 2
+                                </option>
+                                <option>
+                                    Category 3
+                                </option>
+                            </select> <button class="btn btn-default" style=
+                            "background:#64b242;" type="submit"><span class=
+                            "glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </form>
+                </div><!--==========3 col====-->
+                <div class="col-md-3 col-xs-6">
+                    <div class="yell" style="width:150px;">
+                        <img alt="bag" height="auto" src="images/bag.png"
+                        width="auto">
+                        <h4>Your Bag</h4>
+                        <h5><b>99 ITEMS</b></h5>
+                        <hr class="bline">
+                        <a href="#">START SHOPPING &gt;</a><br>
+                    </div>
+                </div>
+            </div><!--==========row end====-->
+        </div>
+    </header><!--==========header end========================-->
+    <div class="container-fluid">
+        <div class="row" style="background:#f2f2f2;">
+            <div class="col-xs-6 col-sm-3 col-md-3 sidebar-offcanvas inside">
+                <nav class="navbar navbar-inverse sidebar" role="navigation">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button class="navbar-toggle" data-target=
+                            "#bs-sidebar-navbar-collapse-1" data-toggle=
+                            "collapse" type="button"><span class=
+                            "sr-only">Toggle navigation</span> <span class=
+                            "icon-bar"></span> <span class="icon-bar"></span>
+                            <span class="icon-bar"></span></button> 
+                            <!--==<a class="navbar-brand" href="#">Brand</a>======-->
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id=
+                        "bs-sidebar-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown active">
+                                    <a class="dropdown-toggle" data-toggle=
+                                    "dropdown" href="#"><img class=
+                                    "img-responsive pull-left" height="auto"
+                                    src="images/menu.png" width="auto">Grocery
+                                    & Staples <span class=
+                                    "pull-right hidden-xs showopacity glyphicon glyphicon-menu-right"
+                                    style="font-size:16px;"></span></a>
+                                    <ul class="dropdown-menu forAnimate" role=
+                                    "menu">
+                                        <li>
+                                            <a href="#">SUB - CATEGORIES</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">SUB - CATEGORIES</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="img" height="auto"
+                                    src="images/bullet.png" width=
+                                    "auto">CATEGORIES</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="img" height="auto"
+                                    src="images/bullet.png" width=
+                                    "auto">CATEGORIES</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-toggle" data-toggle=
+                                    "dropdown" href="#"><img alt="img" height=
+                                    "auto" src="images/bullet.png" width=
+                                    "auto">CATEGORIES <span class=
+                                    "pull-right hidden-xs showopacity glyphicon glyphicon-menu-right"
+                                    style="font-size:16px;"></span></a>
+                                    <ul class="dropdown-menu forAnimate" role=
+                                    "menu">
+                                        <li>
+                                            <a href="#">SUB - CATEGORIES</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">SUB - CATEGORIES</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="img" height="auto"
+                                    src="images/bullet.png" width=
+                                    "auto">CATEGORIES</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="img" height="auto"
+                                    src="images/bullet.png" width=
+                                    "auto">CATEGORIES</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="img" height="auto"
+                                    src="images/bullet.png" width=
+                                    "auto">CATEGORIES</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="img" height="auto"
+                                    src="images/bullet.png" width=
+                                    "auto">CATEGORIES</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="img" height="auto"
+                                    src="images/bullet.png" width=
+                                    "auto">CATEGORIES</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div><!--==========1 col end===-->
+            <!--=====================main content start==========-->
+            <div class="col-sm-9 col-md-6 col-xs-12">
+                <div class="row">
+                    <div style="background:#fff;">
+                        <ul class="breadcrumb">
+                            <li>
+                                <a href="#">Grocery & Staples</a>
+                            </li>
+                            <li>
+                                <a href="#">Category</a>
+                            </li>
+                            <li>
+                                <a href="#">Atta</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b>SHOWING 1 - 20 OF 146 PRODUCTS</b>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12"><img alt="advertise"
+                        class="img-responsive" height="auto" src=
+                        "images/ashirvad.png" width="auto"></div>
+                        <div class="col-md-6 col-xs-12">
+                            <h6>ITC</h6>
+                            <h5>Aashirwaad Atta</h5>
+                            <p>uilt on top of the popular AngularJS framework
+                            from Google, Ionic utilizes AngularJS to provide
+                            the application structure, while Ionic itself
+                            focuses on the user interface. In other words. uilt
+                            on top of the from Google, Ionic utilizes AngularJS
+                            to provide the application structure, while Ionic
+                            itself focuses on the user interface. In other
+                            words uilt on top of the from Google, Ionic
+                            utilizes AngularJS to provide the application
+                            structure, while Ionic itself focuses on the user
+                            interface. In other words</p>
+                            <hr>
+                            <h6>10KG POUCH</h6>
+                            <h5>Rs.136/-</h5>
+                            <form role="form">
+                                <div class="form-group">
+                                    <select class="form-control" id="sel1">
+                                        <option selected="true" style=
+                                        "display:none;">
+                                            Size - Price
+                                        </option>
+                                        <option>
+                                            1
+                                        </option>
+                                        <option>
+                                            2
+                                        </option>
+                                        <option>
+                                            3
+                                        </option>
+                                        <option>
+                                            4
+                                        </option>
+                                    </select><br>
+                                </div>
+                                <p>button</p><button class="btn btn-default"
+                                type="submit">ADD TO BAG</button>
+                            </form>
+                        </div>
+                    </div><!--======item end=-->
+                    <ul id="tabs">
+                        <li style="list-style: none; display: inline">
+                            <h1>hello</h1>
+                        </li>
+                        <li>
+                            <a href="#java">Java</a>
+                        </li>
+                        <li>
+                            <a href="#php">PHP</a>
+                        </li>
+                        <li>
+                            <a href="#python">Python</a>
+                        </li>
+                        <li>
+                            <a href="#ruby">Ruby</a>
+                        </li>
+                        <li>
+                            <a href="#perl">Perl</a>
+                        </li>
+                    </ul>
+                    <div class="tab-section" id="java">
+                        <h2>Overview</h2>
+                        <p>Java is a general-purpose, concurrent, class-based,
+                        object-oriented computer programming language that is
+                        specifically designed to have as few implementation
+                        dependencies as possible. It is intended to let
+                        application developers "write once, run anywhere"
+                        (WORA), meaning that code that runs on one platform
+                        does not need to be recompiled to run on another. Java
+                        applications are typically compiled to bytecode (class
+                        file) that can run on any Java virtual machine (JVM)
+                        regardless of computer architecture.</p>
+                    </div>
+                    <div class="tab-section" id="php">
+                        <h2>Documentation</h2>
+                        <p>The PHP Manual is available online in a selection of
+                        languages. Please pick a language from the list
+                        below.</p>
+                        <p>You can learn how to integrate our online manual
+                        with various tools, including your web browser, on our
+                        quick reference tips page. You can also get more
+                        information about php.net URL shortcuts by visiting our
+                        URL how to page.</p>
+                    </div>
+                    <div class="tab-section" id="python">
+                        <h2>About Python</h2>
+                        <p>Python is a remarkably powerful dynamic programming
+                        language that is used in a wide variety of application
+                        domains. Python is often compared to Tcl, Perl, Ruby,
+                        Scheme or Java. Some of its key distinguishing
+                        features</p>
+                    </div>
+                    <div class="tab-section" id="ruby">
+                        <h2>Getting Started</h2>
+                        <p></p>
+                        <h3>Try Ruby!</h3>An interactive tutorial that lets you
+                        try out Ruby right in your browser. This 15-minute
+                        tutorial is aimed at beginners who want to get a
+                        feeling of the language.
+                        <p></p>
+                    </div>
+                    <div class="tab-section" id="perl">
+                        <h2>Overview of Perl</h2>
+                        <p>This document is intended to give you a quick
+                        overview of the Perl programming language, along with
+                        pointers to further documentation. It is intended as a
+                        "bootstrap" guide for those who are new to the
+                        language, and provides just enough information for you
+                        to be able to read other peoples' Perl and understand
+                        roughly what it's doing, or write your own simple
+                        scripts.</p>
+                    </div>
+                </div><!--=================== nav ends====-->
+            </div><!--2 col end-->
+            <div class="col-xs-6 col-sm-3 col-md-3&gt; &lt;img src="><img alt=
+            "advertise" class="img-responsive" height="auto" src=
+            "images/adv.png" width="auto"></div>
+            <!--=========================3 col================-->
+        </div><!--/row-->
+        <!--=====================================================modal=========-->
+        <button class="btn btn-link fix" data-target="#myModal" data-toggle=
+        "modal" style="" type="button"><img alt="widget" src=
+        "images/widget.png"></button> <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal" type=
+                        "button">&times;</button>
+                        <h4 class="modal-title">Contact Us</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>DieSachbearbeiter nh ljlkjl</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal"
+                        type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--==========main content====-->
+    <!--===================footer=======-->
+    <footer>
+        <div class="row">
+            <div class="col-md-4 col-xs-6">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <ul>
+                            <li>
+                                <a class="g" href="">HELP</a>
+                            </li>
+                            <li>
+                                <a href="">ABOUT Us</a>
+                            </li>
+                            <li>
+                                <a href="">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="">HOW IT WORKS</a>
+                            </li>
+                            <li>
+                                <a href="">DELIVERY DETAILS</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <ul>
+                            <li>
+                                <a class="g" href="">POLICY</a>
+                            </li>
+                            <li>
+                                <a href="">CANCELLATION & RETURNS POLICY</a>
+                            </li>
+                            <li>
+                                <a href="">TERMS & CONDITION</a>
+                            </li>
+                            <li>
+                                <a href="">PRIVACY POLICY</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!--==========col 1==-->
+            <div class="col-md-4 col-xs-6">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <ul>
+                            <li>
+                                <a class="g" href="">HELP</a>
+                            </li>
+                            <li>
+                                <a href="">ABOUT Us</a>
+                            </li>
+                            <li>
+                                <a href="">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="">HOW IT WORKS</a>
+                            </li>
+                            <li>
+                                <a href="">DELIVERY DETAILS</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <ul>
+                            <li>
+                                <a class="g" href="">POLICY</a>
+                            </li>
+                            <li>
+                                <a href="">CANCELLATION & RETURNS POLICY</a>
+                            </li>
+                            <li>
+                                <a href="">TERMS & CONDITION</a>
+                            </li>
+                            <li>
+                                <a href="">PRIVACY POLICY</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!--================col 2==-->
+            <div class="col-md-4 col-xs-6">
+                <ul>
+                    <li class="g">
+                        <a class="g" href="">NEWSLETTER</a>
+                    </li><!--======newsletter===-->
+                    <li style="list-style: none; display: inline">
+                        <form class="newsletter">
+                            <input placeholder="Enter your email address" type=
+                            "email" value=""> <input name="submit" onclick=
+                            "submitEmail();" type="button" value="Submit">
+                        </form>
+                        <div id="submissionResponse"></div><!--=============-->
+                    </li>
+                    <li>Subscribe to our newsletter by email.</li>
+                    <li>
+                        <a href="https://www.facebook.com/"><img alt="fb"
+                        height="auto" src="images/fb.png" width="auto"></a>
+                        <a href=
+                        "https://twitter.com/?gclid=CLHG5-Hi4cwCFccQaAodD3UBDQ&gclsrc=aw.ds">
+                        <img alt="fb" height="auto" src="images/g.png" width=
+                        "auto"></a> <a href=
+                        "https://plus.google.com/collections/featured"><img alt="fb"
+                        height="auto" src="images/t.png" width="auto"></a>
+                    </li>
+                </ul>
+            </div><!--========= col3=========-->
+        </div><!--===============row end==-->
+    </footer><!--/.container-->
+    <div class="copiright container-fluid" style="background:#404040;">
+        <p>copyright 2014 All Rights Reserved</p>
+    </div><!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js">
+    </script> 
+    <script>
+    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    </script> 
+    <script src="js/bootstrap.min.js">
+    </script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+     
+    <script src="js/ie10-viewport-bug-workaround.js">
+    </script> 
+    <script src="js/offcanvas.js">
+    </script> 
+    <script src="https://code.jquery.com/jquery-1.10.2.js">
+    </script> 
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+    <link href=
+    "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel=
+    "stylesheet">
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">
+    </script> 
+    <script src=
+    "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script> <!--==========================tabs========-->
+     
+    <script>
+    $(function(){
+    $('.tab-section').hide();
+    $('#tabs a').bind('click', function(e){
+        $('#tabs a.current').removeClass('current');
+        $('.tab-section:visible').hide();
+        $(this.hash).show();
+        $(this).addClass('current');
+        e.preventDefault();
+    }).filter(':first').click();
+    });
+    </script> 
+    <script src="http://code.jquery.com/jquery-latest.js">
+    </script>
+</body>
+</html>
